@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./certbot-settings.sh
+DIR="$(cd "$(dirname "$0")" && pwd)"
+source $DIR/certbot-settings.sh
 
 TYPE=TXT
 NAME="_acme-challenge.${SUBDOMAIN}"

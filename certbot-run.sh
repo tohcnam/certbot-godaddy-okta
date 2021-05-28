@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./certbot-settings.sh
+DIR="$(cd "$(dirname "$0")" && pwd)"
+source $DIR/certbot-settings.sh
 
 certbot certonly \
         --non-interactive \
@@ -9,7 +10,7 @@ certbot certonly \
         -m $EMAIL \
         --preferred-challenges dns \
         --manual \
-        --manual-auth-hook ./certbot-auth-hook.sh \
-        --manual-cleanup-hook ./certbot-cleanup-hook.sh \
-        --deploy-hook ./certbot-deploy-hook.sh \
+        --manual-auth-hook $DIR/certbot-auth-hook.sh \
+        --manual-cleanup-hook $DIR/certbot-cleanup-hook.sh \
+        --deploy-hook $DIR/certbot-deploy-hook.sh \
         -d "${SUBDOMAIN}.${DOMAIN}"

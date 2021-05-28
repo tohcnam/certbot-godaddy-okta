@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./certbot-settings.sh
+DIR="$(cd "$(dirname "$0")" && pwd)"
+source $DIR/certbot-settings.sh
 
 echo "RENEWED_LINEAGE: ${RENEWED_LINEAGE}"
 
