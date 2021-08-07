@@ -4,6 +4,7 @@ DIR="$(cd "$(dirname "$0")" && pwd)"
 source $DIR/certbot-settings.sh
 
 certbot certonly \
+        --force-renewal \
         --non-interactive \
         --agree-tos \
         --manual-public-ip-logging-ok \
