@@ -15,7 +15,7 @@ Note: This script requires that the domain API is enabled on your Okta tenant
 	- ```chmod +x ./certbot-*```
 - Request a new certificate by calling the certbot-run.sh script
 	- ```sudo ./certbot-run.sh```
-- Create a weekly cronjob to automatically renew your certificate:
-	- ```0 0 * * 0 /path/to/certbot-run.sh > /dev/null 2>&1```
+- Create a bi-weekly cronjob to automatically renew your certificate (will run on 15th and 30th of a month):
+	- ```0 0 */15 * * /path/to/certbot-run.sh > /dev/null 2>&1```
 
 Your new certificate should be stored in /etc/letsencrypt/live/[DOMAIN]/
