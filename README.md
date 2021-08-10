@@ -1,8 +1,7 @@
 # Certbot GoDaddy certificate renewal, and Okta deployment
 These scripts allow the creation of Let's Encrypt certificates on GoDaddy managed domains, and automatical doployment to your Okta tenant. 
 
-Note: This script requires that the domain API is enabled on your Okta tenant  
-```Settings -> Features -> Public API for Custom Domains -> Enable```
+Check my blogpost about this here: [Okta: Automate certificate update on custom domains with Lets Encrypt and GoDaddy](https://www.ciam.ninja/post/okta-automate-certificate-update-on-custom-domains-with-lets-encrypt-and-godaddy)
 
 ## Usage
 - Clone this github project
@@ -10,7 +9,7 @@ Note: This script requires that the domain API is enabled on your Okta tenant
 - Enter you [GoDaddy API](https://developer.godaddy.com/keys), [Okta API](https://support.okta.com/help/s/article/How-do-I-create-an-API-token?language=en_US) and domain information in the certbot-settings.sh file
 - Modify the permissions of the certbot-settings.sh file so only the user running the cronjob is able to read it
 	- ```chown root:root ./certbot-settings.sh```
-	- ```chmod 700 ./certbot/api-settings.sh```
+	- ```chmod 700 ./certbot-settings.sh```
 - Make the file executable
 	- ```chmod +x ./certbot-*```
 - Request a new certificate by calling the certbot-run.sh script
